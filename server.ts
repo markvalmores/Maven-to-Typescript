@@ -36,7 +36,7 @@ async function startServer() {
       res.json({ ts: response.text });
     } catch (error) {
       console.error(error);
-      res.status(500).json({ error: "Failed to convert" });
+      res.status(500).json({ error: error instanceof Error ? error.message : "Failed to convert" });
     }
   });
 

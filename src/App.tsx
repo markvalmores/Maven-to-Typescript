@@ -14,10 +14,13 @@ export default function App() {
         body: JSON.stringify({ code: input, type: 'Java/Maven code' }),
       });
       const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.error || 'Conversion failed');
+      }
       setOutput(data.ts);
     } catch (e) {
       console.error(e);
-      setOutput('Error converting');
+      setOutput(e instanceof Error ? e.message : 'Error converting');
     }
     setLoading(false);
   };

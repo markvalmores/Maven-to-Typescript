@@ -1,0 +1,6 @@
+{
+  "name": "Maven to TypeScript Converter",
+  "description": "An online AI-powered tool to convert Java models/Maven dependencies to TypeScript definitions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
